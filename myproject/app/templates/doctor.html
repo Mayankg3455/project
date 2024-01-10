@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Doctor Dashboard</h1>
+    <div>
+        <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+        <p><strong>Full Name:</strong> {{ user_profile.user.get_full_name }}</p>
+        <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+        <p><strong>Address:</strong> {{ user_profile.address_line1 }}, {{ user_profile.city }}, {{ user_profile.state }} {{ user_profile.pincode }}</p>
+        {% if user_profile.profile_picture %}
+            <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+        {% endif %}
+    </div>
+{% endblock %}

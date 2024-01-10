@@ -1,0 +1,55 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Site</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'signin' %}">Sign In</a>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+</body>
+</html>
